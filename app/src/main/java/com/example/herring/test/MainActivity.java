@@ -18,7 +18,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private TextView textViewResult;
     private ArrayList<String> mDescriptions = new ArrayList<>();
     private ArrayList<String> mPhotoUrls = new ArrayList<>();
     private ArrayList<String> mPhotoIDs = new ArrayList<>();
@@ -36,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //textViewResult = findViewById(R.id.TextView);
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
