@@ -20,13 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> mDescriptions = new ArrayList<>();
     private ArrayList<String> mPhotoUrls = new ArrayList<>();
-    private ArrayList<String> mPhotoIDs = new ArrayList<>();
 
     private Toast toast;
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mDescriptions,mPhotoUrls, mPhotoIDs,this);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mDescriptions,mPhotoUrls,this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                         if (photos.get(i) != null) {
                             mDescriptions.add(photos.get(i).getTitle());
                             mPhotoUrls.add(photos.get(i).getThumbnailUrl());
-                            mPhotoIDs.add("ID: " + (i + 1));
                         }
                     }
                     initRecyclerView();
